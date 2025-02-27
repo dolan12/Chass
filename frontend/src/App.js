@@ -16,7 +16,7 @@ import Axios  from 'axios';
 
 
 
-const socket = io.connect(process.env.REACT_APP_SERVER_URL)
+const socket = io.connect("https://chass.onrender.com")
 
 const App = () =>{
     const [loggedUser, setLoggedUser] = useState("")

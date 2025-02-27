@@ -15,8 +15,7 @@ import io from 'socket.io-client'
 
 
 
-const socket = io.connect(process.env.REACT_APP_SERVER_URL)
-//const socket = io.connect("https://chess-rooms-app.onrender.com")
+const socket = io.connect("https://chass.onrender.com");
 
 const Board = ({user, setInGame, rating, socket, setRating}) =>{
     const [chatLog, setChatLog] = useState([])
@@ -110,7 +109,7 @@ const Board = ({user, setInGame, rating, socket, setRating}) =>{
 
     //Save PGN to mondodb user and update elo rating
     const savePGN = (result) =>{
-      Axios.post(`${process.env.REACT_APP_SERVER_URL}/saveGame`, //Change this later to be url for render server
+      Axios.post(`https://chass.onrender.com/saveGame`, //Change this later to be url for render server
       {
         Username: user,
         result,
@@ -144,7 +143,7 @@ const Board = ({user, setInGame, rating, socket, setRating}) =>{
         }
         newRating = Math.round(newRating)
         setRating(newRating)
-        Axios.post(`${process.env.REACT_APP_SERVER_URL}/updateRating`,
+        Axios.post(`https://chass.onrender.com/updateRating`,
             {
                 Username: user,
                 newRating

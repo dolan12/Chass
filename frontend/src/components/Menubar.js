@@ -132,7 +132,7 @@ const Menubar = ({setLoggedUser, setLoggedDisplay, inGame, setRating}) =>{
     }
 
     const createUser = () =>{
-      Axios.post(`${process.env.REACT_APP_SERVER_URL}/createUser`, //Change this later to be url for render server
+      Axios.post(`https://chass.onrender.com/createUser`, //Change this later to be url for render server
       {
         Username: user,
         Password: pass,
@@ -153,7 +153,7 @@ const Menubar = ({setLoggedUser, setLoggedDisplay, inGame, setRating}) =>{
       }) 
     }
     const loginUser = () =>{
-      Axios.post(`${process.env.REACT_APP_SERVER_URL}/loginUser`, //Change this later to be url for render server
+      Axios.post(`https://chass.onrender.com/loginUser`, //Change this later to be url for render server
       {
         Username: user,
         Password: pass,

@@ -22,7 +22,7 @@ const Profile = ({user, displayName, rating}) =>{
     
 
     const getGames = () =>{
-        Axios.post(`${process.env.REACT_APP_SERVER_URL}/getUserGames`,
+        Axios.post(`https://chass.onrender.com/getUserGames`,
       {
         Username: user,
       }).then((response)=>{ 
@@ -36,7 +36,7 @@ const Profile = ({user, displayName, rating}) =>{
       })
     }
     const getRecord = () =>{
-      Axios.post(`${process.env.REACT_APP_SERVER_URL}/getUserRecord`,{
+      Axios.post(`https://chass.onrender.com/getUserRecord`,{
         Username: user
       }).then((response)=>{
         setRecord(`${response.data.Wins} Wins/${response.data.Losses} Losses/${response.data.Draws} Draws`)
