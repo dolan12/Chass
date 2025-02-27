@@ -17,7 +17,7 @@ dotenv.config();
 
 mongoose.connect(process.env.MONGODB_CHESSROOMS_URI)
 
-const server = app.listen(process.env.PORT, () =>{
+const server = app.listen(process.env.PORT,'0.0.0.0', () =>{
     console.log("Server is running")
 })
 
@@ -142,7 +142,7 @@ app.post("/updateRating", async(req, res)=>{ //Update rating after game, I will 
 
 const io = new Server(server, {
     cors:{
-        origin: [ "http://localhost:3000"],
+        origin: [ "https://chass-1.onrender.com","http://localhost:3002"],
         methods: ["GET", "POST"]
     }
 })
