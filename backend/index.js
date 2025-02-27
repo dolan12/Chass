@@ -17,7 +17,7 @@ dotenv.config();
 
 mongoose.connect(process.env.MONGODB_CHESSROOMS_URI)
 
-const server = app.listen(process.env.PORT,'0.0.0.0', () =>{
+const server = app.listen(process.env.PORT || 3002,'0.0.0.0', () =>{
     console.log("Server is running")
 })
 
