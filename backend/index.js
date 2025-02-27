@@ -142,7 +142,7 @@ app.post("/updateRating", async(req, res)=>{ //Update rating after game, I will 
 
 const io = new Server(server, {
     cors:{
-        origin: [ "https://chass-1.onrender.com","http://localhost:3002"],
+        origin: [ "https://chass-iwov.onrender.com","http://localhost:3002"],
         methods: ["GET", "POST"]
     }
 })
